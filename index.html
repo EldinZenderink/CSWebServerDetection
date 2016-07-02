@@ -1,0 +1,41 @@
+<html>
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+	<script src="CSLocalServerDetection.js"></script>
+</head>
+<body>
+<center> 
+	<h4>List Of Found Servers </h4>
+	<br />
+	<div id="localServers">
+	</div>
+	<br />
+	<button onclick="refreshServers()"> Refresh </button>
+</center>
+<script>
+
+	var detectServers = new ClientSideServerDetection();
+	function gotServers(servers){
+		console.log(servers);
+		$('#localServers').html('');
+		$.each(servers, function(key, val){
+			var serverFound = val.ip + ":" + val.port;
+			$('#localServers').append(serverFound + "<br />");
+		});
+	}
+
+	
+	function refreshServers(){
+		detectServers.setPorts(["8008"]);
+		
+		$('#localServers').html(' <b> LOADING </b>');
+		detectServers.runDetection(gotServers)
+	}
+
+	
+
+	
+</script>
+
+</body>
+</html>
