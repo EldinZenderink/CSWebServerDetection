@@ -2,6 +2,9 @@
 
 CSWebServerDetection is a library written in JavaScript/JQuery to detect webservers on your local network (needs some requirements).  
 
+### Demo
+[YouTube video showing what it does.](https://www.youtube.com/watch?v=ZPteKJoRoIA&feature=youtu.be)
+
 ### Use Cases
 To be able to write your interface and host it seperate from your back end application. You can make a service acting as a http web server which you use to communicate with your web interface and control the application. (Interfaces can look much better if they are written in html/js :D). It also improve's cross platform compatibility if you write your backend in Java or in C# mono. You can make it run 24/7 on your RPI for example. The user does not need to remember the ip of your Raspberry Pi but can just use a url to your webhost where you host your interface, and the interface can detect the rpi automatically. 
 
